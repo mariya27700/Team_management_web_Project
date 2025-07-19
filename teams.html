@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>p1</title>
+    </head>
+    <style>
+   
+    .img {
+        background-color: #dbe2f1;
+        text-align: center;
+        padding: 10px 0;
+    }
+   .ref {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background-color: #d5e8e8;
+        padding: 12px;
+        flex-wrap: wrap;
+    }
+
+    .ref a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        font-size: 20px;
+        transition: color 0.3s;
+    }
+
+    .ref a:hover {
+        color: #007bff;
+    }
+  .t,.tt{
+    display: flex;
+  }
+    .teams{
+        margin-left: 100px;
+        padding-left: 20px;
+        padding-right: 45px;
+        padding-bottom: 5px;
+        padding-top: 2px;
+       
+        margin-top: 30px;
+        background-color: rgb(237, 216, 239);
+        border: 2px dashed rgb(235, 74, 173);
+        border-radius: 5px;
+        
+    }
+     .team
+{
+        margin-left: 170px;
+        padding-left: 20px;
+        padding-right: 95px;
+        padding-bottom: 5px;
+        padding-top: 2px;
+      
+        margin-top: 30px;
+        background-color: rgb(237, 216, 239);
+        border: 2px dashed rgb(235, 74, 173);
+        border-radius: 5px;
+        
+    }
+    .tea{
+        margin-left: 100px;
+        padding-left: 20px;
+        padding-right: 26px;
+        padding-bottom: 5px;
+        padding-top: 2px;
+       
+        margin-top: 30px;
+        background-color: rgb(237, 216, 239);
+        border: 2px dashed rgb(235, 74, 173);
+        border-radius: 5px;
+        
+    }
+    .te{
+         margin-left: 165px;
+        padding-left: 20px;
+        padding-right: 60px;
+        padding-bottom: 5px;
+        padding-top: 2px;
+      
+        margin-top: 30px;
+        background-color: rgb(237, 216, 239);
+        border: 2px dashed rgb(235, 74, 173);
+        border-radius: 5px;
+    }
+    p{
+        font-size: 20px;
+    }
+    .find {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.find .f {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #e9f5ff; /* light blue background */
+}
+
+.find .b {
+    padding: 8px 12px;
+    font-size: 16px;
+    margin-left: 8px;
+    background-color: #c3e6cb; /* light green background */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.find .b:hover {
+    background-color: #a7d7b5;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+h4 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+h4 a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+h4 a:hover {
+    color: #0056b3;
+}
+
+
+</style>
+
+</head>
+<body>
+    <div class="img">
+    <img src="logo.png" width="150">
+    </div>
+    <nav class="ref">
+       <a href="index.html">Home</a>
+       <a href="#">Teams</a>
+       <a href="project.html">Projects</a>
+       <a href="event.html">Events</a>
+       
+    </nav>
+    <div class="find">
+       <input type="text" class="f" placeholder="Search for teams">
+       <button class="b" onclick="findTeam();">🔍</button>
+       <p class="result"></p>
+
+
+    </div>
+    <div class="t">
+<div class="teams">
+
+
+     <h1>Development</h1>
+    <h3>Responsible for building and <br>maintaining the platform's core features.</h3>
+ <p><strong>Lead: Ella John</strong>
+<br>Members: 5</p>
+</div>
+<div class="team">
+<h1>Marketing</h1>
+    <h3>Handles brand promotion and <br>social media engagement.</h3>
+ <p> <strong>Lead: Ben Clint</strong>
+<br>Members: 4</p>
+</div>
+</div>
+
+
+  <div class="tt">
+<div class="tea">
+<h1>HR</h1>
+<h3>The HR team handles recruitment, policies,<br>and employee engagement.</h3>
+ <p> <strong>Lead: Annie M</strong><br>Members: 3</p></p>
+</div>
+<div class="te">
+<h1>Research</h1>
+    <h3>The Research team explores<br>new ideas, trends, and innovations.</h3>
+ <p> <strong>Lead: Edwin R</strong> <br>Members: 3</p></p>
+</div>
+</div>
+<h4><a href="team.html">Click here to see all team members</a></h4>
+
+
+        <script>
+        function findTeam(){
+                let input = document.querySelector('.f').value;
+                let find = document.querySelector('.teams h1').innerHTML;
+                let fin = document.querySelector('.team h1').innerHTML;
+                let fi = document.querySelector('.tea h1').innerHTML;
+                let f = document.querySelector('.te h1').innerHTML;
+
+                if (
+                    input.toUpperCase() === find.toUpperCase() ||
+                    input.toUpperCase() === fin.toUpperCase() ||
+                    input.toUpperCase() === fi.toUpperCase() ||
+                    input.toUpperCase() === f.toUpperCase()
+                ) {
+                    document.querySelector('.result').innerHTML =
+                        `<p style="background-color: #d4edda; padding: 10px; border-radius: 5px;">✅ Team: ${input} is present</p>`;
+                } else {
+                    document.querySelector('.result').innerHTML =
+                        `<p style="background-color: #f8d7da; padding: 10px; border-radius: 5px;">❌ Team: ${input} does not exist</p>`;
+                }
+                 document.querySelector('.f').value='';
+            }
+
+
+        </script>
+</body>
+
+</html>

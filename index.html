@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JMO</title>
+    </head>
+    <style>
+    body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .img {
+        background-color: #dbe2f1;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .img img {
+        width: 150px;
+    }
+
+    .ref {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background-color: #d5e8e8;
+        padding: 12px;
+        flex-wrap: wrap;
+    }
+
+    .ref a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s;
+    }
+
+    .ref a:hover {
+        color: #007bff;
+    }
+
+    .ref p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+
+    .display {
+        width: 80px;
+        height: 80px;
+        border: 2px solid #ccc;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .in {
+        margin-top: 20px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        background-color: #e3d6c6;
+    }
+
+    .name {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    .b {
+        padding: 10px 18px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 6px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .b:hover {
+        background-color: #0056b3;
+    }
+
+
+    
+ 
+</style>
+
+</head>
+<body>
+    <div class="img">
+    <img src="logo.png" width="150">
+    </div>
+    <nav class="ref">
+       <a href="#">Home</a>
+       <a href="teams.html">Teams</a>
+       <a href="project.html">Projects</a>
+       <a href="event.html">Events</a>
+       <p class="p">User profile photo: <input type="file" name="file" class="imag" accept="image/png, image/jpeg"></p>
+       <div class="display"></div>
+    </nav>
+
+     <div class="in">
+        <input type="text" placeholder="Name please"  class="name"required>
+        <button class="b" onclick="displayName();">Enter</button>
+      
+        
+     </div>
+     <div class="i">
+     <p class="result"></p>
+       
+     </div>
+     <div class="j">
+        <p class="quotes"></p>
+     </div>
+
+
+
+
+        <script>
+           const i=document.querySelector('.imag');
+            let upload_img="";
+            i.addEventListener("change",function(){
+                const r=new FileReader();
+                r.addEventListener("load",()=>{
+                    upload_img=r.result;
+                    document.querySelector('.display').style.backgroundImage=`url(${upload_img})`;
+                });
+                  r.readAsDataURL(this.files[0]);
+             });
+
+
+             function displayName(){
+                let input=document.querySelector('.name').value;
+              
+                document.querySelector('.result').innerHTML=`Hello, ${input} 🌷🌷`;
+                document.querySelector('.b').disabled=true;
+                document.querySelector('.i').style.backgroundColor='rgb(227, 214, 198)';
+                document.querySelector('.i').style.paddingTop='20px';
+                document.querySelector('.i').style.paddingBottom='20px';
+                document.querySelector('.i').style.fontSize="25px";
+                document.querySelector('.i').style.textAlign="center";
+                let c=['You can do it🌼.','Success comes with difficulty.','You are amazing!!','You are worth it!!','You are precious🤍']
+                let rand=Math.floor(Math.random() * (c.length));
+                document.querySelector('.quotes').innerHTML=`Today's quote: <br>${c[rand]}`;
+                document.querySelector('.j').style.backgroundColor='rgb(227, 214, 198)';
+                document.querySelector('.j').style.paddingTop='5px';
+                document.querySelector('.j').style.paddingBottom='20px';
+                document.querySelector('.j').style.fontSize="25px";
+                document.querySelector('.j').style.textAlign="center";
+                document.querySelector('.name').value="";
+             }
+          
+
+
+        </script>
+</body>
+
+</html>
